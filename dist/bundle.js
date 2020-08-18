@@ -221,7 +221,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a1e53ddfa4f3690c071d2e23e897ae55.png\");\n\n//# sourceURL=webpack:///./src/assets/images/bg.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/bg.png\");\n\n//# sourceURL=webpack:///./src/assets/images/bg.png?");
 
 /***/ }),
 

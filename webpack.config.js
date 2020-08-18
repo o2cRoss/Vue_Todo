@@ -23,7 +23,11 @@ module.exports = {
             loader: 'vue-loader'
         },{
             test: /\.(jpg|jpeg|png|svg)$/,
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]',
+                outputPath: 'images/'
+            }
         }
     ]
     },
