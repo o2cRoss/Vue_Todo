@@ -21,7 +21,11 @@ module.exports = {
         rules: [{
             test: /\.vue$/,
             loader: 'vue-loader'
-        }]
+        },{
+            test: /\.(jpg|jpeg|png|svg)$/,
+            loader: 'file-loader'
+        }
+    ]
     },
     //插件 配置
     plugins: [

@@ -2,9 +2,15 @@
     <div>this is App!</div>
 </template>
 
+
 <script>
+import img from './assets/images/bg.png';
+
 export default {
-    name: 'App'
+    name: 'App',
+    created(){
+        console.log(img);
+    }
 }
 </script>
 
