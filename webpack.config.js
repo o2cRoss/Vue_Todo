@@ -23,11 +23,15 @@ module.exports = {
             loader: 'vue-loader'
         },{
             test: /\.(jpg|jpeg|png|svg)$/,
-            loader: 'file-loader',
+            loader: 'url-loader', //file-loader
             options: {
                 name: '[name].[ext]',
-                outputPath: 'images/'
+                outputPath: 'images/',
+                limit: 2048
             }
+        },{
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }
     ]
     },
