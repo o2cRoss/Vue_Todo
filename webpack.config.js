@@ -6,6 +6,12 @@ const path = require('path');
 //引入 vue-loader的插件
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+//引入html-webpack-plugin
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+//引入clean-webpack-plugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 module.exports = {
     //打包环境配置 development 开发环境 或者 production 生产环境
     mode: 'development',
@@ -13,7 +19,7 @@ module.exports = {
     entry: './src/main.js',
     //打包的出口
     output: {
-        filename: 'bundle.js',
+        filename: 'o2cRoss.js',
         path: path.resolve(__dirname, 'dist')
     },
     // 配置打包规则
@@ -32,12 +38,19 @@ module.exports = {
         },{
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
+        },{
+            test: /\.styl(us)?$/,
+            use:['style-loader' , 'css-loader', 'stylus-loader']
         }
     ]
     },
     //插件 配置
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            template: './index.html'
+        }),
+        new CleanWebpackPlugin()
     ],
     resolve: {
         alias: {
