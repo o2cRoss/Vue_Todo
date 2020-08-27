@@ -13,11 +13,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    //打包环境配置 development 开发环境 或者 production 生产环境
-    mode: 'production',
     //打包入口
     entry: './src/main.js',
-    
     //打包的出口
     output: {
         filename: 'o2cRoss.js',
