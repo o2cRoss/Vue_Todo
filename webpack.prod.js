@@ -10,20 +10,14 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 //引入clean-webpack-plugin
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     //打包环境配置 development 开发环境 或者 production 生产环境
-    mode: 'development',
+    mode: 'production',
     //打包入口
     entry: './src/main.js',
-    //devserver配置
-    devServer: {
-        //指定服务器根目录
-        contentBase: './dist',
-        //自动打开浏览器
-        open: true
-    },  
+    
     //打包的出口
     output: {
         filename: 'o2cRoss.js',
@@ -61,7 +55,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ],
     resolve: {
         alias: {

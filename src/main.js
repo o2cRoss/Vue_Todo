@@ -14,3 +14,4 @@ new Vue({
 });
 //挂载App组件
 
+console1.log("a");
