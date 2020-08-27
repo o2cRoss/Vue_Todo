@@ -18,7 +18,7 @@ module.exports = {
     //打包的出口
     output: {
         filename: 'o2cRoss.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
     // 配置打包规则
     module: {

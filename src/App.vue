@@ -48,5 +48,5 @@ li
     font-size: 24px
 
 li:nth-of-type(odd)
-    color: blue
+    color: red
 </style>

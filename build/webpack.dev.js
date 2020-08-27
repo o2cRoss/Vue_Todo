@@ -1,6 +1,6 @@
 //  dev 配置
 const baseConfig = require('./webpack.base.js');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 
 //引入webpack插件
 const webpack = require('webpack');
