@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>this is App!</h1>
-        <h2>abc</h2>
+        <h1>风随羽TODO—List</h1>
+        <h2>哈哈</h2>
     </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
 
 <style lang="stylus" scoped>
 h2
-    color: green
-    font-size : 48px
+    color: blue
+    font-size : 18px
+    transform : translate(150px,100px)
 </style>

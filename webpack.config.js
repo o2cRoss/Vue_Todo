@@ -17,6 +17,13 @@ module.exports = {
     mode: 'development',
     //打包入口
     entry: './src/main.js',
+    //devserver配置
+    devServer: {
+        //指定服务器根目录
+        contentBase: './dist',
+        //自动打开浏览器
+        open: true
+    },  
     //打包的出口
     output: {
         filename: 'o2cRoss.js',
@@ -40,7 +47,11 @@ module.exports = {
             use: ['style-loader', 'css-loader']
         },{
             test: /\.styl(us)?$/,
-            use:['style-loader' , 'css-loader', 'stylus-loader']
+            use:['style-loader' ,
+            'css-loader',
+            'postcss-loader',
+            'stylus-loader'
+            ]
         }
     ]
     },
