@@ -23,6 +23,10 @@ module.exports = {
     // 配置打包规则
     module: {
         rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "babel-loader"
+        },{
             test: /\.vue$/,
             loader: 'vue-loader'
         },{
