@@ -26,10 +26,10 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: "babel-loader"
-        },{
+        }, {
             test: /\.vue$/,
             loader: 'vue-loader'
-        },{
+        }, {
             test: /\.(jpg|jpeg|png|svg)$/,
             loader: 'url-loader', //file-loader
             options: {
@@ -37,18 +37,18 @@ module.exports = {
                 outputPath: 'images/',
                 limit: 2048
             }
-        },{
+        }, {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
-        },{
+        }, {
             test: /\.styl(us)?$/,
-            use:['style-loader' ,
-            'css-loader',
-            'postcss-loader',
-            'stylus-loader'
+            use: ['style-loader',
+                'css-loader',
+                'postcss-loader',
+                'stylus-loader'
             ]
         }
-    ]
+        ]
     },
     //插件 配置
     plugins: [
@@ -60,7 +60,9 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            '@': path.resolve(__dirname, '../src'),
+            'styles': path.resolve(__dirname, '../src/assets/styles')
         }
     }
 };
