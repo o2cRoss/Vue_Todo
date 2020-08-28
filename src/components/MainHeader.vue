@@ -17,7 +17,7 @@
     text-align: center
 
     h1
-      margin: 20px
+      margin: 18px
       font-size: 110px
       font-weight: 300
       color: $green
