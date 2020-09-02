@@ -9,12 +9,16 @@
       @keyup.enter="addTodo"
     />
     <todo-item
-      v-for="(item, index) in todoData"
+      v-for="(item, index) in filterData"
       :key="index"
       :todo="item"
       @del="handleDelItem"
     ></todo-item>
-    <todo-info></todo-info>
+    <todo-info
+      :total="total"
+      @toggleState="handleToggleState"
+      @clearComplated="handleClearComplated"
+    ></todo-info>
   </div>
 </template>
 <script>
@@ -27,6 +31,8 @@
       return {
         todoData: [],
         content: '',
+        total: 0,
+        filter: 'all',
       }
     },
     methods: {
@@ -44,6 +50,45 @@
           this.todoData.findIndex((item) => item.id === id),
           1
         )
+      },
+      handleToggleState(item) {
+        this.filter = item
+      },
+      handleClearComplated() {
+        //方法1删除源数组数据
+        // for (let i = 0; i < this.todoData.length; i++) {
+        //   let index = this.todoData.findIndex((item) => item.complated === true)
+        //   if (index != -1) {
+        //     this.todoData.splice(index, 1)
+        //   }
+        // }
+        //方法2过滤重新赋值
+        this.todoData = this.todoData.filter((item) => item.complated === false)
+      },
+    },
+    watch: {
+      todoData: {
+        deep: true,
+        handler() {
+          this.total = this.todoData.filter(
+            (item) => item.complated == false
+          ).length
+        },
+      },
+    },
+    computed: {
+      filterData() {
+        switch (this.filter) {
+          case 'active':
+            return this.todoData.filter((item) => item.complated == false)
+            break
+          case 'complated':
+            return this.todoData.filter((item) => item.complated == true)
+            break
+          default:
+            return this.todoData
+            break
+        }
       },
     },
     components: {

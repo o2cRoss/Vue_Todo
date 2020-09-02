@@ -2,6 +2,13 @@
   <div>
     <main-header></main-header>
     <first-todo></first-todo>
+
+    <div>
+      <h1>app组件</h1>
+      <router-link to="/account">account</router-link>
+      <router-link to="/goodslist">goodslist</router-link>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

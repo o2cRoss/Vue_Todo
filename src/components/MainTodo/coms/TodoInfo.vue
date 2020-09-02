@@ -1,10 +1,15 @@
 <template>
   <div class="todo-info">
-    <span class="totals">1 item left</span>
+    <span class="totals">{{total}} item left</span>
     <div class="tabs">
-      <a v-for="(item, index) in staties" :key="index">{{item}}</a>
+      <a
+        v-for="(item, index) in staties"
+        :key="index"
+        :class="{actived:item == active}"
+        @click="toggleState(item)"
+      >{{item}}</a>
     </div>
-    <button class="btn info">Clear Complated</button>
+    <button class="btn info" @click="clearComplated">Clear Complated</button>
   </div>
 </template>
 
@@ -14,7 +19,20 @@
     data() {
       return {
         staties: ['all', 'active', 'complated'],
+        active: 'all',
       }
+    },
+    props: {
+      total: Number,
+    },
+    methods: {
+      toggleState(item) {
+        this.active = item
+        this.$emit('toggleState', item)
+      },
+      clearComplated() {
+        this.$emit('clearComplated')
+      },
     },
   }
 </script>
