@@ -1,12 +1,36 @@
 <template>
   <header class="main-header">
     <h1>ToDoList</h1>
+    <div class="test">
+      <span class="sp">Header数字: {{ num }}</span>
+      <span class="sp">Header数字: {{ getNum }}</span>
+      <span class="sp">nickname: {{ $store.state.users.nickname }}</span>
+      <span class="sp">token: {{ $store.state.users.token }}</span>
+      <button @click="xiugai()">修改</button>
+      <button @click="xiugai1()">修改1</button>
+    </div>
   </header>
 </template>
   
 <script>
+  import { mapState, mapGetters, mapMutations } from 'vuex'
   export default {
     name: 'MainHeader',
+    computed: {
+      // num() {
+      //   return this.$store.state.num
+      // },
+      ...mapState(['num']),
+      ...mapGetters(['getNum']),
+    },
+    methods: {
+      xiugai() {
+        this.$store.commit('users/xiugai')
+      },
+      ...mapMutations({
+        xiugai1: 'users/xiugai1',
+      }),
+    },
   }
 </script>
 
@@ -15,6 +39,12 @@
 
   .main-header
     text-align: center
+
+    .test
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
 
     h1
       margin: 18px

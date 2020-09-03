@@ -2,6 +2,7 @@
   <div>
     <main-header></main-header>
     <first-todo></first-todo>
+    <main-footer></main-footer>
 
     <div>
       <h1>app组件</h1>
@@ -17,6 +18,7 @@
   import './assets/styles/global.styl'
   import MainHeader from './components/MainHeader.vue'
   import FirstTodo from './components/MainTodo/FirstTodo.vue'
+  import MainFooter from './components/MainFooter.vue'
 
   export default {
     name: 'App',
@@ -24,6 +26,7 @@
       //组件名：组件对象
       MainHeader: MainHeader,
       FirstTodo,
+      MainFooter,
     },
     // data() {
     //   return {

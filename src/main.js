@@ -1,9 +1,11 @@
 // 导入Vue
 import Vue from 'vue';
-
+// 导入 路由管理
 import router from './router.js'
 // 导入App组件
 import App from './App.vue';
+// 引入 store 状态管理器
+import store from '@/store';
 
 // 创建Vue 根实例
 new Vue({
@@ -14,7 +16,8 @@ new Vue({
     // },
     // template: '<App/>'
     render: c => c(App),
-    router: router
+    router: router,
+    store
 });
 //挂载App组件
 
