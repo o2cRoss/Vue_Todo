@@ -6,8 +6,8 @@
       <span class="sp">Header数字: {{ getNum }}</span>
       <span class="sp">nickname: {{ $store.state.users.nickname }}</span>
       <span class="sp">token: {{ $store.state.users.token }}</span>
-      <button @click="xiugai()">修改</button>
-      <button @click="xiugai1()">修改1</button>
+      <button class="btn info2" @click="xiugai()">修改</button>
+      <button class="btn info2" @click="xiugai1()">修改1</button>
     </div>
   </header>
 </template>

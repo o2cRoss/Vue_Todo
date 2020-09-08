@@ -1,3 +1,6 @@
+@import '~styles/mixins.styl'
+@import '~styles/theme.styl'
+
 *
     margin: 0
     padding: 0
@@ -22,3 +25,17 @@ h2
     color: white
     font-size: 18px
     background-color: rgba(black, 0.5)
+
+.btn.info2
+    InfoBtn()
+    font-size: 18px
+    // border: 1px solid rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 2px #666
+
+    &:hover
+        background-color: $lightgreen
+        color: #fff
+
+    &:active
+        background-color: $lightgreen
+        color: #fff
